@@ -14,7 +14,7 @@ export class PersonListComponent implements OnInit {
 
   personArray = [];
   showDeletedMessage: boolean;
-  searchText: string = " ";
+  searchText: string = "";
 
 
   ngOnInit() {

@@ -17,6 +17,7 @@ export class PersonComponent implements OnInit {
 
 
   ngOnInit() {
+
   }   
 
   onSubmit() {
@@ -32,26 +33,27 @@ export class PersonComponent implements OnInit {
         this.showSuccessMessage = true;
         setTimeout(() => this.showSuccessMessage = false, 3000);
         this.submitted = false;
-         
-        this.personService.form.reset();
-
-        //this is to be done for proper reset operation
-      
-        this.personService.form.setValue({
-        $key: null,
-        Name: '',
-        Password: '',
-        Phone: '',
-        User_name: '',
-        User_type: ''
-
-        });
+        
     }
   }
 
 
 
-  
+     resetForm() {
+        if (this.personService.form != null)
 
+          this.personService.form.reset();
 
-}
+          this.personService.form.setValue({
+            $key: null,
+            Name: '',
+            Password: '',
+            Phone: '',
+            User_name: '',
+            User_type: ''
+
+        });
+
+    }
+
+  }
